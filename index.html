@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Affan Madley</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@700&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#EDE0C8;--cream-dark:#D4BFA0;--brown:#3B1F0A;--brown-mid:#6B3A1F;--brown-faint:rgba(59,31,10,.13);--fs:5rem}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html,body{width:100%;height:100%;overflow:hidden}
+body{background-color:var(--cream);display:flex;align-items:center;justify-content:center;position:relative;-webkit-user-select:none;user-select:none}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:100;opacity:.045;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");background-repeat:repeat;background-size:200px 200px}
+.blob{position:absolute;border-radius:50%;filter:blur(110px);pointer-events:none}
+.blob-1{width:520px;height:520px;background:var(--cream-dark);top:-160px;left:-160px;opacity:.4}
+.blob-2{width:400px;height:400px;background:var(--brown-mid);bottom:-130px;right:-110px;opacity:.15}
+.blob-3{width:300px;height:300px;background:var(--brown);top:50%;left:38%;opacity:.08}
+.corner{position:absolute;width:36px;height:36px;pointer-events:none;opacity:0;animation:fade-ui-plain 1.2s cubic-bezier(.4,0,.2,1) 1.4s forwards}
+.corner svg{width:100%;height:100%}
+.corner-tl{top:28px;left:28px}
+.corner-tr{top:28px;right:28px;transform:scaleX(-1)}
+.corner-bl{bottom:28px;left:28px;transform:scaleY(-1)}
+.corner-br{bottom:28px;right:28px;transform:scale(-1)}
+@media(max-width:480px){.corner{width:22px;height:22px}.corner-tl{top:16px;left:16px}.corner-tr{top:16px;right:16px}.corner-bl{bottom:16px;left:16px}.corner-br{bottom:16px;right:16px}}
+.bottom-ornament{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:6px;opacity:0;animation:fade-ui 1s cubic-bezier(.4,0,.2,1) 2s forwards;pointer-events:none}
+.bottom-ornament .line{width:40px;height:1px;background:var(--brown-faint)}
+.bottom-ornament .dot-trio{display:flex;gap:5px;align-items:center}
+.bottom-ornament .dot-trio span{width:3px;height:3px;border-radius:50%;background:var(--brown);opacity:.25}
+.bottom-ornament .dot-trio span:nth-child(2){opacity:.5;width:4px;height:4px}
+@keyframes fade-ui{from{opacity:0}to{opacity:1}}
+@keyframes fade-ui-plain{from{opacity:0}to{opacity:1}}
+.stage{display:flex;align-items:center;justify-content:center;width:100%;padding:0 5vw;position:relative;z-index:1}
+#text-wrap{display:flex;align-items:center;justify-content:center;white-space:nowrap}
+#chars-container{display:inline-flex;align-items:center;justify-content:center;white-space:nowrap}
+.char{font-family:"Fredoka",sans-serif;font-weight:700;font-size:var(--fs);letter-spacing:.03em;text-transform:uppercase;color:var(--brown);line-height:1;display:none;opacity:0;filter:blur(4px);transform:scale(.95)}
+@keyframes char-in{0%{opacity:0;filter:blur(5px);transform:scale(.9) translateY(4px)}60%{opacity:1;filter:blur(1px);transform:scale(1.02) translateY(-1px)}100%{opacity:1;filter:blur(0);transform:scale(1) translateY(0)}}
+@keyframes char-out{0%{opacity:1;filter:blur(0);transform:scale(1)}100%{opacity:0;filter:blur(3px);transform:scale(.85)}}
+.char.visible{display:inline-block;animation:char-in .35s cubic-bezier(.22,1,.36,1) forwards}
+.char.hiding{display:inline-block;animation:char-out .15s ease-in forwards}
+#dot-el{font-family:"Fredoka",sans-serif;font-weight:700;font-size:var(--fs);color:var(--brown);line-height:1;display:none;opacity:0}
+#dot-el.visible{display:inline-block;animation:char-in .35s cubic-bezier(.22,1,.36,1) forwards}
+.cursor{display:inline-block;font-size:var(--fs);width:.12em;min-width:4px;height:1.05em;background:var(--brown);border-radius:4px;margin-left:.08em;flex-shrink:0;position:relative;top:-.02em;animation:blink 1s ease-in-out infinite}
+@keyframes blink{0%,45%{opacity:1}50%,95%{opacity:0}100%{opacity:1}}
+</style>
+</head>
+<body oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
+<div class="blob blob-1"></div>
+<div class="blob blob-2"></div>
+<div class="blob blob-3"></div>
+
+<div class="corner corner-tl">
+<svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M2 34 L2 2 L34 2" stroke="#3B1F0A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.35"/>
+<circle cx="2" cy="2" r="2" fill="#3B1F0A" opacity="0.4"/>
+</svg>
+</div>
+
+<div class="corner corner-tr">
+<svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M2 34 L2 2 L34 2" stroke="#3B1F0A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.35"/>
+<circle cx="2" cy="2" r="2" fill="#3B1F0A" opacity="0.4"/>
+</svg>
+</div>
+
+<div class="corner corner-bl">
+<svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M2 34 L2 2 L34 2" stroke="#3B1F0A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.35"/>
+<circle cx="2" cy="2" r="2" fill="#3B1F0A" opacity="0.4"/>
+</svg>
+</div>
+
+<div class="corner corner-br">
+<svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M2 34 L2 2 L34 2" stroke="#3B1F0A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.35"/>
+<circle cx="2" cy="2" r="2" fill="#3B1F0A" opacity="0.4"/>
+</svg>
+</div>
+
+<div class="bottom-ornament">
+<div class="line"></div>
+<div class="dot-trio"><span></span><span></span><span></span></div>
+</div>
+
+<div class="stage">
+<div id="text-wrap">
+<span id="chars-container"></span><span id="dot-el">.</span><span class="cursor"></span>
+</div>
+</div>
+
+<script>
+(()=>{const T="AFFAN MADLEY",C=document.getElementById("chars-container"),D=document.getElementById("dot-el");function F(){const e=document.createElement("span");e.style.cssText="font-family:'Fredoka',sans-serif;font-weight:700;font-size:100px;letter-spacing:.03em;text-transform:uppercase;white-space:nowrap;visibility:hidden;position:absolute;top:-9999px";e.textContent=T+".   ";document.body.appendChild(e);const t=window.innerWidth*.85,n=e.offsetWidth;let o=100*(t/n);o=Math.min(o,80);document.documentElement.style.setProperty("--fs",o+"px");document.body.removeChild(e)}function R(e){return e*(.72+Math.random()*.56)}document.addEventListener("contextmenu",e=>e.preventDefault());document.addEventListener("copy",e=>e.preventDefault());document.addEventListener("cut",e=>e.preventDefault());document.addEventListener("keydown",e=>{if(e.key==="F12"||e.keyCode===123)e.preventDefault();if(e.ctrlKey&&e.shiftKey&&(e.key==="I"||e.key==="i"||e.key==="J"||e.key==="j"||e.key==="C"||e.key==="c"))e.preventDefault();if(e.ctrlKey&&(e.key==="U"||e.key==="u"))e.preventDefault()});window.addEventListener("resize",F);F();const H=[];for(let e=0;e<T.length;e++){const t=document.createElement("span");t.className="char";t.textContent=T[e]===" "?"\u00A0":T[e];C.appendChild(t);H.push(t)}const Y=120,U=58,P=1800,L=700;let i=0,m=!1;function G(){if(!m){if(i<T.length){H[i].classList.remove("hiding");H[i].classList.add("visible");i++;D.classList.remove("visible");setTimeout(G,R(Y))}else{D.classList.add("visible");setTimeout(()=>{m=!0;G()},P)}}else{D.classList.remove("visible");if(i>0){i--;const e=H[i];e.classList.remove("visible");e.classList.add("hiding");setTimeout(()=>{if(e.classList.contains("hiding"))e.classList.remove("hiding")},150);setTimeout(G,R(U))}else{m=!1;setTimeout(G,L)}}}setTimeout(G,600)})();
+</script>
+</body>
+</html>
