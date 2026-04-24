@@ -3,11 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-
 <title>AFFAN MADLEY</title>
-
-<link rel="icon" type="image/gif" href="https://media.tenor.com/2pkxlWSXngEAAAAM/one-piece-egghead.gif">
-
+<link rel="icon" type="image/gif" href="https://image.myanimelist.net/ui/BQM6jEZ-UJLgGUuvrNkYUEkqImbCrAO-i_HvnDOPgLC2sHd99gYuzFn22qKQm0npwuMxIjG11B6QmL4PwU-L_A">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@700&display=swap" rel="stylesheet">
@@ -94,27 +91,7 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:100;op
 </div>
 
 <script>
-// --- SCRIPT UNTUK EFEK TITLE GLITCH DI TAB ---
-const originalTitle = "AFFAN MADLEY"; // Teks aslinya
-const glitchChars = "!<>-_\\/[]{}—=+*^?#_@%&"; // Simbol-simbol glitch
-const glitchSpeed = 150; // Kecepatan glitch dalam milidetik
-
-setInterval(() => {
-    let newTitle = "";
-    for (let i = 0; i < originalTitle.length; i++) {
-        // 15% kemungkinan sebuah huruf akan berubah jadi simbol glitch
-        if (originalTitle[i] !== " " && Math.random() < 0.15) {
-            newTitle += glitchChars[Math.floor(Math.random() * glitchChars.length)];
-        } else {
-            newTitle += originalTitle[i];
-        }
-    }
-    document.title = newTitle;
-}, glitchSpeed);
-// ---------------------------------------------
-
-// Script Utama Web Anda
-(()=>{const T="AFFAN MADLEY",C=document.getElementById("chars-container"),D=document.getElementById("dot-el");function F(){const e=document.createElement("span");e.style.cssText="font-family:'Fredoka',sans-serif;font-weight:700;font-size:100px;letter-spacing:.03em;text-transform:uppercase;white-space:nowrap;visibility:hidden;position:absolute;top:-9999px;-webkit-text-size-adjust:100%;text-size-adjust:100%";e.textContent=T+".   ";document.body.appendChild(e);const t=Math.min(window.innerWidth,document.documentElement.clientWidth)*.85,n=e.offsetWidth;let o=100*(t/n);o=Math.min(o,80);document.documentElement.style.setProperty("--fs",o+"px");document.body.removeChild(e)}function R(e){return e*(.72+Math.random()*.56)}function S(e,n){e.classList.remove("visible","hiding");e.style.animation="none";e.style.webkitAnimation="none";void e.offsetHeight;e.style.animation="";e.style.webkitAnimation="";e.classList.add(n)}document.addEventListener("contextmenu",e=>e.preventDefault());document.addEventListener("copy",e=>e.preventDefault());document.addEventListener("cut",e=>e.preventDefault());document.addEventListener("keydown",e=>{if(e.key==="F12"||e.keyCode===123)e.preventDefault();if(e.ctrlKey&&e.shiftKey&&(e.key==="I"||e.key==="i"||e.key==="J"||e.key==="j"||e.key==="C"||e.key==="c"))e.preventDefault();if(e.ctrlKey&&(e.key==="U"||e.key==="u"))e.preventDefault()});window.addEventListener("resize",F,{passive:!0});window.addEventListener("orientationchange",()=>setTimeout(F,120),{passive:!0});if(window.visualViewport)window.visualViewport.addEventListener("resize",F,{passive:!0});F();const H=[];for(let e=0;e<T.length;e++){const t=document.createElement("span");t.className="char";t.textContent=T[e]===" "?"\u00A0":T[e];C.appendChild(t);H.push(t)}const Y=120,U=58,P=1800,L=700;let i=0,m=!1;function G(){if(!m){if(i<T.length){S(H[i],"visible");i++;D.classList.remove("visible");setTimeout(G,R(Y))}else{S(D,"visible");setTimeout(()=>{m=!0;G()},P)}}else{D.classList.remove("visible");if(i>0){i--;const e=H[i];S(e,"hiding");setTimeout(()=>{if(e.classList.contains("hiding"))e.classList.remove("hiding")},150);setTimeout(G,R(U))}else{m=!1;setTimeout(G,L)}}}setTimeout(G,600)})();
+(()=>{const T="AFFAN MADLEY",C=document.getElementById("chars-container"),D=document.getElementById("dot-el");function F(){const e=document.createElement("span");e.style.cssText="font-family:'Fredoka',sans-serif;font-weight:700;font-size:100px;letter-spacing:.03em;text-transform:uppercase;white-space:nowrap;visibility:hidden;position:absolute;top:-9999px;-webkit-text-size-adjust:100%;text-size-adjust:100%";e.textContent=T+".   ";document.body.appendChild(e);const t=Math.min(window.innerWidth,document.documentElement.clientWidth)*.85,n=e.offsetWidth;let o=100*(t/n);o=Math.min(o,80);document.documentElement.style.setProperty("--fs",o+"px");document.body.removeChild(e)}function R(e){return e*(.72+Math.random()*.56)}function S(e,n){e.classList.remove("visible","hiding");e.style.animation="none";e.style.webkitAnimation="none";void e.offsetHeight;e.style.animation="";e.style.webkitAnimation="";e.classList.add(n)}document.addEventListener("contextmenu",e=>e.preventDefault());document.addEventListener("copy",e=>e.preventDefault());document.addEventListener("cut",e=>e.preventDefault());document.addEventListener("keydown",e=>{if(e.key==="F12"||e.keyCode===123)e.preventDefault();if(e.ctrlKey&&e.shiftKey&&(e.key==="I"||e.key==="i"||e.key==="J"||e.key==="j"||e.key==="C"||e.key==="c"))e.preventDefault();if(e.ctrlKey&&(e.key==="U"||e.key==="u"))e.preventDefault()});window.addEventListener("resize",F,{passive:!0});window.addEventListener("orientationchange",()=>setTimeout(F,120),{passive:!0});if(window.visualViewport)window.visualViewport.addEventListener("resize",F,{passive:!0});F();const H=[];for(let e=0;e<T.length;e++){const t=document.createElement("span");t.className="char";t.textContent=T[e]===" "?"\u00A0":T[e];C.appendChild(t);H.push(t)}const Y=120,U=58,P=1800,L=700;let i=0,m=!1;function G(){if(!m){if(i<T.length){S(H[i],"visible");i++;D.classList.remove("visible");setTimeout(G,R(Y))}else{S(D,"visible");setTimeout(()=>{m=!0;G()},P)}}else{D.classList.remove("visible");if(i>0){i--;const e=H[i];S(e,"hiding");setTimeout(()=>{if(e.classList.contains("hiding"))e.classList.remove("hiding")},150);setTimeout(G,R(U))}else{m=!1;setTimeout(G,L)}}}setTimeout(G,600)})();const _t="AFFAN MADLEY",_c="!<>-_\\/[]{}—=+*^?#_@%&";setInterval(()=>{let t="";for(let i=0;i<_t.length;i++){t+=(_t[i]!==" "&&Math.random()<0.08)?_c[Math.floor(Math.random()*_c.length)]:_t[i]}document.title=t},100);
 </script>
 </body>
 </html>
